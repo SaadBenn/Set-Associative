@@ -1,0 +1,114 @@
+Saad
+Peter Graham
+A#4, Q#2
+
+*******************************************
+The program was compiled on the following operating systems: 
+Windows (Lab 430)
+Linux   (Lab 468)
+macOS Sierra. 
+
+*********************************************
+The output from the program is as follow: 
+
+
+OUTPUT:
+
+This is a 2 way set associative cache, cache line size is: 8, total number of cache lines: 8192
+The number of hits: 995496
+The number of references: 1000000
+The number of misses: 4504
+The hit percentage is: 99.55%
+The miss percentage is: 0.45%
+****************************************************************************
+
+This is a 4 way set associative cache, cache line size is: 8, total number of cache lines:  8192
+The number of hits: 995564
+The number of references: 1000000
+The number of misses: 4436
+The hit percentage is: 99.56%
+The miss percentage is: 0.44%
+****************************************************************************
+
+This is a direct mapped cache, cache line size is: 8, total number of cache lines:  8192
+The number of hits: 995338
+The number of references: 1000000
+The number of misses: 4662
+The hit percentage is: 99.53%
+The miss percentage is: 0.47%
+****************************************************************************
+
+This is a 2 way set associative cache, cache line size is: 32, total number of cache lines: 1024
+The number of hits: 998451
+The number of references: 1000000
+The number of misses: 1549
+The hit percentage is: 99.85%
+The miss percentage is: 0.15%
+****************************************************************************
+
+This is a 4 way set associative cache, cache line size is: 32, total number of cache lines:  1024
+The number of hits: 998575
+The number of references: 1000000
+The number of misses: 1425
+The hit percentage is: 99.86%
+The miss percentage is: 0.14%
+****************************************************************************
+
+This is a direct mapped cache, cache line size is: 32, total number of cache lines:  1024
+The number of hits: 995720
+The number of references: 1000000
+The number of misses: 4280
+The hit percentage is: 99.57%
+The miss percentage is: 0.43%
+****************************************************************************
+
+This is a 2 way set associative cache, cache line size is: 8, total number of cache lines: 16384
+The number of hits: 995584
+The number of references: 1000000
+The number of misses: 4416
+The hit percentage is: 99.56%
+The miss percentage is: 0.44%
+****************************************************************************
+
+This is a 4 way set associative cache, cache line size is: 8, total number of cache lines:  16384
+The number of hits: 995576
+The number of references: 1000000
+The number of misses: 4424
+The hit percentage is: 99.56%
+The miss percentage is: 0.44%
+****************************************************************************
+
+This is a direct mapped cache, cache line size is: 8, total number of cache lines:  16384
+The number of hits: 995477
+The number of references: 1000000
+The number of misses: 4523
+The hit percentage is: 99.55%
+The miss percentage is: 0.45%
+****************************************************************************
+
+This is a 2 way set associative cache, cache line size is: 32, total number of cache lines: 2048
+The number of hits: 998584
+The number of references: 1000000
+The number of misses: 1416
+The hit percentage is: 99.86%
+The miss percentage is: 0.14%
+****************************************************************************
+
+This is a 4 way set associative cache, cache line size is: 32, total number of cache lines:  2048
+The number of hits: 998619
+The number of references: 1000000
+The number of misses: 1381
+The hit percentage is: 99.86%
+The miss percentage is: 0.14%
+****************************************************************************
+
+This is a direct mapped cache, cache line size is: 32, total number of cache lines:  2048
+The number of hits: 998474
+The number of references: 1000000
+The number of misses: 1526
+The hit percentage is: 99.85%
+The miss percentage is: 0.15%
+****************************************************************************
+
+Programmed by Saad.
+ 
