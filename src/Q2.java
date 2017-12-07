@@ -190,7 +190,7 @@ class saCache {
 
         int j = 0;
         while(j < N) {
-            directory[j].is_Valid = 0;
+            directory[j].is_Valid = false;
             j++;
         } // end while
     } // close initDirectory method
@@ -199,15 +199,19 @@ class saCache {
     /**************************** Simulate Method *************************/
     public void simulate(BufferedReader input) {
 
+
         try {
             while ((line = input.readLine()) != null ) {
-                String[] token = line.split(" ");
-                ref++;
+                String[] token = line.split(" "); // split them into two tokens for each line with regex as whitespace
+                ref++; // increment the count for references read from the file
 
-                address = Integer.valueOf(Integer.parseInt(token[1],16));
-                memNumber = Integer.divideUnsigned(address, lineSize);
-                tag = Integer.divideUnsigned(memNumber, cacheDegree);
-                setNum = Integer.remainderUnsigned(memNumber, N/cacheDegree);
+
+                /*********************** compute the tag and the index number for the cache ******************/
+                address = Integer.valueOf(Integer.parseInt(token[1],16)); // java 8 hex to dec built-in method
+                memNumber = address/lineSize;
+                tag = memNumber/cacheDegree;
+                setNum = memNumber % (N/cacheDegree);
+
 
                 isHit = 0;
                 int setFirst = setNum * cacheDegree;
@@ -215,7 +219,7 @@ class saCache {
 
                 int count = setFirst;
                 while (count <= setLast) {
-                    if( (directory[count].is_Valid == 1) && (directory[count].tag == tag)) {
+                    if( (directory[count].is_Valid) && (directory[count].tag == tag)) {
                         hits++;
                         cacheLineNum = count;
                         isHit = 1;
@@ -230,7 +234,7 @@ class saCache {
                                 ii--;
                             } // end while
 
-                            directory[setFirst].is_Valid = 1;
+                            directory[setFirst].is_Valid = true;
                             directory[setFirst].tag = tag;
                         } // end inner if
 
@@ -241,7 +245,7 @@ class saCache {
 
                 if( isHit == 0 ) {
                     misses++;
-                    directory[setLast].is_Valid = 1;
+                    directory[setLast].is_Valid = true;
                     directory[setLast].tag = tag;
                 } // end if
             } // end outer while loop
@@ -252,6 +256,12 @@ class saCache {
             System.exit(1);
         } // end try-catch
 
+        toString(hits,ref, misses); // call the toString to display the result
+    } // close simulate method
+
+
+    /************* display the result of the cache ***************************************/
+    public void toString(int hits, int ref, int misses) {
 
         // calculate the hits/miss percentages
         double hitPercent = hits/(double)ref;
@@ -265,8 +275,7 @@ class saCache {
         System.out.println("The number of misses: " + Integer.toString(misses));
         System.out.println("The hit percentage is: " + String.format("%.2f", hitPercent) + "%");
         System.out.println("The miss percentage is: " + String.format("%.2f", missPercent)+ "%");
-
-    } // close simulate method
+    }
 
 } // close saCache class
 
@@ -278,6 +287,6 @@ class cacheDirectory {
 
     // Instance Variables
     public int tag;
-    public int is_Valid;
+    public boolean is_Valid;
 
 } /* close cacheDirectory */
